@@ -1,0 +1,55 @@
+SELECT * FROM EMPLOYEE EMPLOYEE ;
+Insert into EMPLOYEE values ('101', '10/22/2018', 'TestUser','_101','2000');
+Insert into EMPLOYEE values ('102', '10/23/2018', 'TestUser','_102','2000');
+Insert into EMPLOYEE values ('103', '10/24/2018', 'TestUser','_103','2000');
+Insert into EMPLOYEE values ('104', '10/26/2018', 'TestUser','_104','2000');
+Insert into EMPLOYEE values ('105', '10/27/2018', 'TestUser','_105','2000');
+Insert into EMPLOYEE values ('106', '10/12/2018', 'TestUser','_106','2000');
+commit;
+
+
+Skill
+Resource Name
+SOW Name
+Location
+Client Manager
+Vendor
+Project
+Location
+Comments
+MSA Rate
+Rate ($)
+Jan-19
+Feb-19
+Mar-19
+Apr-19
+May-19
+Jun-19
+Jul-19
+Aug-19
+Sep-19
+Oct-19
+Nov-19
+Dec-19
+Total Hours
+Fees ($) After Discount
+
+
+--insert into T_EMPLOYEE(Emp_id,Skill,Resource_Name,SOW_Name,Location_Type,Client_Manager,Vendor,Project,Work_Location,Comments,MSA_Rate,Rate,Jan_Hrs,Feb_Hrs,Mar_Hrs,Apr_Hrs,May_Hrs,Jun_Hrs,Jul_Hrs,Aug_Hrs,Sep_Hrs,Oct_Hrs,Nov_Hrs,Dec_Hrs,Discounted_Fee) Select * from TEST_EMPLOYEE;
+
+--alter table TEST_EMPLOYEE drop column TOTAL_HOURS;
+--drop table TEST_EMPLOYEE;
+--CREATE TABLE TEST_EMPLOYEE AS SELECT * FROM CSVREAD('C:\Users\snehashnu.panday\Documents\employee_import_2.csv');
+--select * from TEST_EMPLOYEE;
+select * from T_EMPLOYEE;
+--show columns from T_EMPLOYEE;
+
+
+add(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.employeeService.addEmployee({ name } as Employee)
+      .subscribe(emp => {
+        this.employees.push(emp);
+      });
+  }
